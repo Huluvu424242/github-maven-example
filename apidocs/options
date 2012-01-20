@@ -1,17 +1,17 @@
 -classpath
-'/home/ksawicki/repositories/github-maven-example/example/target/classes'
+'c:/Aktentasche/_daten/workspace_projects/github-maven-example/example/target/classes'
 -encoding
 'UTF-8'
 -protected
 -sourcepath
-'/home/ksawicki/repositories/github-maven-example/example/src/main/java'
+'c:/Aktentasche/_daten/workspace_projects/github-maven-example/example/src/main/java'
 -author
 -bottom
-'Copyright &#169; 2011. All Rights Reserved.'
+'Copyright &#169; 2012. All Rights Reserved.'
 -charset
 'UTF-8'
 -d
-'/home/ksawicki/repositories/github-maven-example/example/target/site/apidocs'
+'c:/Aktentasche/_daten/workspace_projects/github-maven-example/example/target/site/apidocs'
 -docencoding
 'UTF-8'
 -doctitle
