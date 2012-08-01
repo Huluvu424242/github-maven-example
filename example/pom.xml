@@ -24,7 +24,7 @@
 
 	<ciManagement>
 		<system>Jenkins</system>
-		<url>https://funthomas424242.ci.cloudbees.com/job/</url>
+		<url>https://funthomas424242.ci.cloudbees.com/job/github%20maven%20example/</url>
 	</ciManagement>
 
 
