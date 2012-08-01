@@ -1,17 +1,17 @@
 -classpath
-'c:/Aktentasche/_daten/workspace_projects/github-maven-example/example/target/classes'
+'C:/Users/SchubertT006/git/github-maven-example/example/target/classes'
 -encoding
 'UTF-8'
 -protected
 -sourcepath
-'c:/Aktentasche/_daten/workspace_projects/github-maven-example/example/src/main/java'
+'C:/Users/SchubertT006/git/github-maven-example/example/src/main/java'
 -author
 -bottom
 'Copyright &#169; 2012. All Rights Reserved.'
 -charset
 'UTF-8'
 -d
-'c:/Aktentasche/_daten/workspace_projects/github-maven-example/example/target/site/apidocs'
+'C:/Users/SchubertT006/git/github-maven-example/example/target/site/apidocs'
 -docencoding
 'UTF-8'
 -doctitle

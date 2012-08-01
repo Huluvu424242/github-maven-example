@@ -3,7 +3,7 @@
 <rss version="0.91">
   <channel>
     <title>GitHub Maven Plugin Example - Checkstyle report</title>
-    <link>https://github.com/FunThomas424242/github-maven-example</link>
+    <link>https://github.com/funthomas424242/github-maven-example</link>
     <description>GitHub Maven Plugin Example - Checkstyle report</description>
     <language>en-us</language>
     <copyright>&#169;2012</copyright>
@@ -13,9 +13,9 @@
              Warnings: 0,
              Infos: 0
       </title>
-            <link>https://github.com/FunThomas424242/github-maven-example/checkstyle.html</link>
+            <link>https://github.com/funthomas424242/github-maven-example/checkstyle.html</link>
       <description>
-        <p>Click <a href="https://github.com/FunThomas424242/github-maven-example/checkstyle.html">here</a> for the full Checkstyle report.</p>
+        <p>Click <a href="https://github.com/funthomas424242/github-maven-example/checkstyle.html">here</a> for the full Checkstyle report.</p>
 
         <table summary="Files" boder="1">
           <thead>
@@ -29,7 +29,7 @@
           <tbody>
                           <tr>
                 <td>
-                  <a href="https://github.com/FunThomas424242/github-maven-example/checkstyle.html#com.github.maven.example.Widget.java">com/github/maven/example/Widget.java</a>
+                  <a href="https://github.com/funthomas424242/github-maven-example/checkstyle.html#com.github.maven.example.Widget.java">com/github/maven/example/Widget.java</a>
                 </td>
                 <td>
                   0
