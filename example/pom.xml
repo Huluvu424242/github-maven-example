@@ -7,13 +7,47 @@
 	<version>0.1-SNAPSHOT</version>
 	<name>GitHub Maven Plugin Example</name>
 	<description>Project to demonstrate GitHub Maven plugins</description>
-	<url>https://github.com/kevinsawicki/github-maven-example</url>
+	<url>https://github.com/funthomas424242/github-maven-example</url>
+
+	<prerequisites>
+		<maven>3.0</maven>
+	</prerequisites>
+
+
+	<properties>
+		<user.jdk-version>1.6</user.jdk-version>
+		<github.global.userName>${env.gituser}</github.global.userName>
+		<github.global.password>${env.gitpassword}</github.global.password>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>https://funthomas424242.ci.cloudbees.com/job/</url>
+	</ciManagement>
+
 
 	<issueManagement>
-		<url>https://github.com/kevinsawicki/github-maven-example/issues</url>
+		<url>https://github.com/funthomas424242/github-maven-example/issues</url>
 		<system>GitHub Issues</system>
 	</issueManagement>
 
+	<distributionManagement>
+		<downloadUrl>https://github.com/FunThomas424242/github-maven-example/downloads</downloadUrl>
+		<snapshotRepository>
+			<id>cloudbees-snapshots</id>
+			<name>Snapshot Repository at CloudBees</name>
+			<uniqueVersion>false</uniqueVersion>
+			<url>https://repository-funthomas424242.forge.cloudbees.com/snapshot/</url>
+		</snapshotRepository>
+		<repository>
+			<id>cloudbees-releases</id>
+			<name>Release Repository at CloudBees</name>
+			<uniqueVersion>false</uniqueVersion>
+			<url>https://repository-funthomas424242.forge.cloudbees.com/release/</url>
+		</repository>
+	</distributionManagement>
 	<licenses>
 		<license>
 			<name>MIT License</name>
@@ -23,32 +57,30 @@
 	</licenses>
 
 	<scm>
-		<url>https://github.com/kevinsawicki/github-maven-example</url>
-		<connection>scm:git:git://github.com/kevinsawicki/github-maven-example.git</connection>
-		<developerConnection>scm:git:git@github.com:kevinsawicki/github-maven-example.git</developerConnection>
+		<url>https://github.com/FunThomas424242/github-maven-example</url>
+		<connection>scm:git:git://github.com/funthomas424242/github-maven-example.git</connection>
+		<developerConnection>scm:git:git@github.com:funthomas424242/github-maven-example.git</developerConnection>
 	</scm>
 
 	<developers>
 		<developer>
-			<email>kevinsawicki@gmail.com</email>
-			<name>Kevin Sawicki</name>
-			<url>https://github.com/kevinsawicki</url>
-			<id>kevinsawicki</id>
+			<email>funthomas424242@googlemail.com</email>
+			<name>FunThomas424242</name>
+			<url>https://github.com/funthomas424242</url>
+			<id>tmichel</id>
 		</developer>
 	</developers>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>com.github.github</groupId>
 				<artifactId>downloads-maven-plugin</artifactId>
-				<version>0.4</version>
+				<version>0.6</version>
 				<configuration>
-					<description>Official ${project.name} build of the ${project.version} release</description>
+					<description>Official ${project.name} build of the
+						${project.version} release</description>
 					<override>true</override>
 					<includeAttached>true</includeAttached>
 				</configuration>
@@ -113,14 +145,16 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>${user.jdk-version}</source>
+					<target>${user.jdk-version}</target>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.3.2</version>
 				<configuration>
 					<archive>
 						<manifest>
@@ -133,6 +167,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.8.1</version>
 				<executions>
 					<execution>
 						<goals>
@@ -144,6 +179,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
 				<executions>
 					<execution>
 						<goals>
