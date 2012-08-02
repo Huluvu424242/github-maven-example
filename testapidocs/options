@@ -1,21 +1,23 @@
 -classpath
-'C:/Users/SchubertT006/git/github-maven-example/example/target/classes;C:/Users/SchubertT006/git/github-maven-example/example/target/test-classes;C:/var/m3/junit/junit/4.8/junit-4.8.jar'
+'/scratch/jenkins/workspace/github maven example/example/target/classes:/scratch/jenkins/workspace/github maven example/example/target/test-classes:/home/jenkins/.m2/repository/junit/junit/4.8/junit-4.8.jar'
 -encoding
 'UTF-8'
 -protected
 -sourcepath
-'C:/Users/SchubertT006/git/github-maven-example/example/src/test/java'
+'/scratch/jenkins/workspace/github maven example/example/src/test/java'
 -author
 -bottom
 'Copyright &#169; 2012. All Rights Reserved.'
 -charset
 'UTF-8'
 -d
-'C:/Users/SchubertT006/git/github-maven-example/example/target/site/testapidocs'
+'/scratch/jenkins/workspace/github maven example/example/target/site/testapidocs'
 -docencoding
 'UTF-8'
 -doctitle
 'GitHub Maven Plugin Example 0.1-SNAPSHOT Test API'
+-link
+'http://java.sun.com/javase/6/docs/api'
 -use
 -version
 -windowtitle

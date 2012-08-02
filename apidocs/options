@@ -1,17 +1,17 @@
 -classpath
-'C:/Users/SchubertT006/git/github-maven-example/example/target/classes'
+'/scratch/jenkins/workspace/github maven example/example/target/classes'
 -encoding
 'UTF-8'
 -protected
 -sourcepath
-'C:/Users/SchubertT006/git/github-maven-example/example/src/main/java'
+'/scratch/jenkins/workspace/github maven example/example/src/main/java'
 -author
 -bottom
 'Copyright &#169; 2012. All Rights Reserved.'
 -charset
 'UTF-8'
 -d
-'C:/Users/SchubertT006/git/github-maven-example/example/target/site/apidocs'
+'/scratch/jenkins/workspace/github maven example/example/target/site/apidocs'
 -docencoding
 'UTF-8'
 -doctitle
