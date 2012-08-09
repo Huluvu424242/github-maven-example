@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/github_maven_example_feature_1.0.0.qualifier.jar" id="github_maven_example_feature" version="1.0.0.qualifier">
+      <category name="github-examples"/>
+   </feature>
+   <category-def name="github-examples" label="github-maven-example"/>
+</site>
