@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+
+	<bannerLeft>
+		<name>Project Name</name>
+		<src>http://maven.apache.org/images/apache-maven-project-2.png</src>
+		<href>http://maven.apache.org/</href>
+	</bannerLeft>
+
+	<bannerRight>
+		<src>http://maven.apache.org/images/maven-logo-2.gif</src>
+	</bannerRight>
+
+	<version position="right" />
+
+	<body>
+		<menu name="Project Links">
+			<item name="Parent" href="../index.html">
+				<item name="Module" href="../module/index.html" />
+				<item name="Feature" href="index.html" />
+				<item name="Update Site" href="../updatesite/index.html" />
+			</item>
+		</menu>
+		<menu ref="reports" />
+	</body>
+
+	<poweredBy>
+		<logo name="Maven" href="http://maven.apache.org/"
+			img="http://maven.apache.org/images/logos/maven-feather.png" />
+	</poweredBy>
+
+</project>

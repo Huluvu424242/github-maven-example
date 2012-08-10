@@ -13,7 +13,7 @@
 	<packaging>eclipse-repository</packaging>
 
 	<name>GitHub Maven Plugin Example - Update Site</name>
-	<url>https://github.com/funthomas424242/github-maven-example/updatesite</url>
+	<url>http://funthomas424242.github.com/github-maven-example/updatesite</url>
 
 	<dependencies>
 		<dependency>
@@ -41,27 +41,22 @@
 					<archiveSite>true</archiveSite>
 				</configuration>
 			</plugin>
-			<!--plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.5</version>
-			</plugin-->
+
 			<plugin>
 				<groupId>com.github.github</groupId>
-				<artifactId>downloads-maven-plugin</artifactId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>${github.maventools.version}</version>
 				<configuration>
-					<description>Official Eclipse Update Sites of ${project.name} for
-						version ${project.version}</description>
-					<override>true</override>
-					<includeAttached>true</includeAttached>
+					<message>Building site for ${project.version}</message>
+					<path>updatesite</path>
 					<dryRun>${testonly}</dryRun>
 				</configuration>
 				<executions>
 					<execution>
 						<goals>
-							<goal>upload</goal>
+							<goal>site</goal>
 						</goals>
-						<phase>install</phase>
+						<phase>site</phase>
 					</execution>
 				</executions>
 			</plugin>

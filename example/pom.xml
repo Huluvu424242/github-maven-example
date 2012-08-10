@@ -9,7 +9,7 @@
 
 	<name>GitHub Maven Plugin Example</name>
 	<description>Project to demonstrate GitHub Maven plugins</description>
-	<url>https://github.com/funthomas424242/github-maven-example</url>
+	<url>http://funthomas424242.github.com/github-maven-example</url>
 
 	<prerequisites>
 		<maven>3.0</maven>
@@ -17,12 +17,13 @@
 
 
 	<properties>
-		<testonly>true</testonly>
+		<testonly>false</testonly>
 		<user.jdk-version>1.6</user.jdk-version>
 		<github.global.userName>${env.gituser}</github.global.userName>
 		<github.global.password>${env.gitpassword}</github.global.password>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.tycho.version>0.12.0</project.build.tycho.version>
+		<github.maventools.version>0.6</github.maventools.version>
 	</properties>
 
 	<repositories>
@@ -84,6 +85,11 @@
 			<uniqueVersion>false</uniqueVersion>
 			<url>https://repository-funthomas424242.forge.cloudbees.com/release/</url>
 		</repository>
+		<site>
+			<id>github</id>
+			<name>GitHub GH Pages</name>
+			<url>http://github.com/FunThomas424242/github-maven-example/</url>
+		</site>
 	</distributionManagement>
 
 	<scm>
@@ -138,7 +144,7 @@
 			<dependency>
 				<groupId>com.github.github</groupId>
 				<artifactId>downloads-maven-plugin</artifactId>
-				<version>0.6</version>
+				<version>${github.maventools.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>info.cukes</groupId>
@@ -151,84 +157,6 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>com.github.github</groupId>
-				<artifactId>downloads-maven-plugin</artifactId>
-				<version>0.6</version>
-				<configuration>
-					<description>Official ${project.name} build of the
-						${project.version} release</description>
-					<override>true</override>
-					<includeAttached>true</includeAttached>
-					<dryRun>${testonly}</dryRun>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>upload</goal>
-						</goals>
-						<phase>install</phase>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>com.github.github</groupId>
-				<artifactId>site-maven-plugin</artifactId>
-				<version>0.4</version>
-				<configuration>
-					<message>Building site for ${project.version}</message>
-					<dryRun>${testonly}</dryRun>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>site</goal>
-						</goals>
-						<phase>site</phase>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<version>3.0</version>
-				<executions>
-					<execution>
-						<phase>install</phase>
-						<goals>
-							<goal>site</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<reportPlugins>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-project-info-reports-plugin</artifactId>
-							<version>2.2</version>
-							<configuration>
-								<dependencyDetailsEnabled>true</dependencyDetailsEnabled>
-								<dependencyLocationsEnabled>true</dependencyLocationsEnabled>
-							</configuration>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-javadoc-plugin</artifactId>
-							<version>2.7</version>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-surefire-report-plugin</artifactId>
-							<version>2.6</version>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-checkstyle-plugin</artifactId>
-							<version>2.6</version>
-						</plugin>
-					</reportPlugins>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -252,29 +180,75 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.8.1</version>
+				<groupId>com.github.github</groupId>
+				<artifactId>downloads-maven-plugin</artifactId>
+				<version>${github.maventools.version}</version>
+				<configuration>
+					<description>Official ${project.name} build of the
+						${project.version} release</description>
+					<override>true</override>
+					<includeAttached>true</includeAttached>
+					<dryRun>${testonly}</dryRun>
+				</configuration>
 				<executions>
 					<execution>
 						<goals>
-							<goal>jar</goal>
+							<goal>upload</goal>
 						</goals>
+						<phase>install</phase>
 					</execution>
 				</executions>
 			</plugin>
-			<!--plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>2.1.2</version>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.0</version>
+				<!-- executions> <execution> <phase>site</phase> <goals> <goal>site</goal> 
+					</goals> </execution> </executions -->
+				<configuration>
+					<!--locales>en,de</locales -->
+					<addModules>false</addModules>
+					<outputEncoding>UTF-8</outputEncoding>
+					<reportPlugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>
+								maven-project-info-reports-plugin
+							</artifactId>
+							<version>2.5</version>
+							<reportSets>
+								<reportSet>
+									<reports>
+										<!--report>dependencies</report -->
+										<report>license</report>
+										<report>scm</report>
+										<report>project-team</report>
+									</reports>
+								</reportSet>
+							</reportSets>
+						</plugin>
+					</reportPlugins>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>${github.maventools.version}</version>
+				<configuration>
+					<message>Building site for ${project.version}</message>
+					<dryRun>${testonly}</dryRun>
+					<noJekyll>true</noJekyll>
+					<merge>true</merge>
+				</configuration>
 				<executions>
 					<execution>
 						<goals>
-							<goal>jar</goal>
+							<goal>site</goal>
 						</goals>
+						<phase>site</phase>
 					</execution>
 				</executions>
-			</plugin-->
+			</plugin>
 		</plugins>
 	</build>
 

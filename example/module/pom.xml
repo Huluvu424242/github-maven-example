@@ -12,18 +12,9 @@
 	<artifactId>github-maven-example-module</artifactId>
 	<packaging>eclipse-plugin</packaging>
 
-<name>GitHub Maven Plugin Example - Module</name>
+
+	<name>GitHub Maven Plugin Example - Module</name>
 	<url>https://github.com/funthomas424242/github-maven-example/module</url>
-
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
-
 
 	<build>
 		<plugins>
@@ -34,9 +25,22 @@
 				<extensions>true</extensions>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.5</version>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>${github.maventools.version}</version>
+				<configuration>
+					<message>Building site for ${project.version}</message>
+					<path>module</path>
+					<dryRun>${testonly}</dryRun>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>site</phase>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
