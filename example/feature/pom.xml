@@ -14,7 +14,7 @@
 
 
 	<name>GitHub Maven Plugin Example - Feature</name>
-	<url>https://github.com/funthomas424242/github-maven-example/feature</url>
+	<url>http://funthomas424242.github.com/github-maven-example/feature</url>
 
 
 	<build>
