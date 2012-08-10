@@ -110,7 +110,7 @@
 
 	<developers>
 		<developer>
-			<email>funthomas424242@googlemail.com</email>
+			<email>funthomas424242@gmail.com</email>
 			<name>FunThomas424242</name>
 			<url>https://github.com/funthomas424242</url>
 			<id>tmichel</id>
@@ -180,31 +180,9 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>com.github.github</groupId>
-				<artifactId>downloads-maven-plugin</artifactId>
-				<version>${github.maventools.version}</version>
-				<configuration>
-					<description>Official ${project.name} build of the
-						${project.version} release</description>
-					<override>true</override>
-					<includeAttached>true</includeAttached>
-					<dryRun>${testonly}</dryRun>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>upload</goal>
-						</goals>
-						<phase>install</phase>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
 				<version>3.0</version>
-				<!-- executions> <execution> <phase>site</phase> <goals> <goal>site</goal> 
-					</goals> </execution> </executions -->
 				<configuration>
 					<!--locales>en,de</locales -->
 					<addModules>false</addModules>

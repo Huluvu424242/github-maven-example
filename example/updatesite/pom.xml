@@ -15,16 +15,7 @@
 	<name>GitHub Maven Plugin Example - Update Site</name>
 	<url>http://funthomas424242.github.com/github-maven-example/updatesite</url>
 
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
-
-
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -41,7 +32,53 @@
 					<archiveSite>true</archiveSite>
 				</configuration>
 			</plugin>
-
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.5</version>
+				<executions>
+					<execution>
+						<id>copy-metadata-xml</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/repository</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}</directory>
+									<filtering>false</filtering>
+									<includes>
+										<include>category.xml</include>
+										<include>site.xml</include>
+										<include>web/**</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>downloads-maven-plugin</artifactId>
+				<version>${github.maventools.version}</version>
+				<configuration>
+					<description>Download this file and add it as local eclipse update
+						site via eclipse update manager.</description>
+					<override>true</override>
+					<includeAttached>true</includeAttached>
+					<dryRun>${testonly}</dryRun>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>upload</goal>
+						</goals>
+						<phase>install</phase>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>com.github.github</groupId>
 				<artifactId>site-maven-plugin</artifactId>

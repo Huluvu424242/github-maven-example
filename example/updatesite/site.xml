@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="GitHub Maven Example - Update Site" url="https://github.com/downloads/FunThomas424242/github-maven-example/github-maven-example-updatesite.zip">
+   </description>
+   <feature url="features/github_maven_example_feature_1.0.0.qualifier.jar" id="github_maven_example_feature" version="1.0.0.qualifier">
+      <category name="github-examples"/>
+   </feature>
+   <category-def name="github-examples" label="github-maven-example"/>
+</site>
