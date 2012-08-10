@@ -1,7 +1,7 @@
 This is an fork of the [github-maven-example](http://kevinsawicki.github.com/github-maven-example)
 project that uses the [GitHub Maven Plugins](https://github.com/github/maven-plugins).
 
-This forked version supported multimodule maven build for eclipse plugins with features and update site hosted at github.
+This forked version supported an multimodule maven build for eclipse plugins with features and update site hosted at github.
 
 See the [POM file](https://github.com/funthomas424242/github-maven-example/blob/master/example/pom.xml)
 for how the downloads plugin and site plugin are configured.
@@ -36,7 +36,7 @@ $ cd github-maven-example/example
 $ mvn clean install
 ```
 
-The compiled, source, and Javadoc JAR files will be uploaded as downloads [here](https://github.com/funthomas424242/github-maven-example/downloads).
+The update site will be uploaded as downloads [here](https://github.com/funthomas424242/github-maven-example/downloads).
 
 # Using the site plugin
 
