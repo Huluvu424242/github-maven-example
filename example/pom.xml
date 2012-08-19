@@ -182,12 +182,12 @@
 							</artifactId>
 							<version>2.5</version>
 							<configuration>
-								<webAccessUrl>https://github.com/FunThomas424242/github-maven-example</webAccessUrl>
+								<!--webAccessUrl>https://github.com/FunThomas424242/github-maven-example</webAccessUrl>
 								<anonymousConnection>scm:git:git://github.com/funthomas424242/github-maven-example.git</anonymousConnection>
-								<developerConnection>scm:git:git@github.com:funthomas424242/github-maven-example.git</developerConnection>
-								<!-- does not work webAccessUrl>${project.scm.url}</webAccessUrl>
+								<developerConnection>scm:git:git@github.com:funthomas424242/github-maven-example.git</developerConnection-->
+								<webAccessUrl>${project.scm.url}</webAccessUrl>
 								<anonymousConnection>${project.scm.connection}</anonymousConnection>
-								<developerConnection>${project.scm.developerConnection}</developerConnection-->
+								<developerConnection>${project.scm.developerConnection}</developerConnection>
 							</configuration>
 							<reportSets>
 								<reportSet>
