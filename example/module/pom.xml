@@ -16,6 +16,8 @@
 	<name>GitHub Maven Plugin Example - Module</name>
 	<url>https://github.com/funthomas424242/github-maven-example/module</url>
 
+
+
 	<build>
 		<plugins>
 			<plugin>
