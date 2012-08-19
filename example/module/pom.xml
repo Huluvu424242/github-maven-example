@@ -16,6 +16,8 @@
 	<name>GitHub Maven Plugin Example - Module</name>
 	<url>https://github.com/funthomas424242/github-maven-example/module</url>
 
+
+
 	<build>
 		<plugins>
 			<plugin>
@@ -24,6 +26,22 @@
 				<version>${project.build.tycho.version}</version>
 				<extensions>true</extensions>
 			</plugin>
+			<!--plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<addModules>false</addModules>
+					<outputEncoding>UTF-8</outputEncoding>
+					<reportPlugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-javadoc-plugin</artifactId>
+							<version>2.8.1</version>
+						</plugin>
+					</reportPlugins>
+				</configuration>
+			</plugin-->
 			<plugin>
 				<groupId>com.github.github</groupId>
 				<artifactId>site-maven-plugin</artifactId>
