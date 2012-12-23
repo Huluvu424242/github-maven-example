@@ -11,93 +11,10 @@
 	<description>Multi Module Project (Eclipse Plugin, Feature + Update Site) to demonstrate GitHub Maven plugins</description>
 	<url>http://funthomas424242.github.com/github-maven-example</url>
 
-	<prerequisites>
-		<maven>3.0</maven>
-	</prerequisites>
-
-
-	<properties>
-		<testonly>false</testonly>
-		<user.jdk-version>1.6</user.jdk-version>
-		<github.global.userName>${env.gituser}</github.global.userName>
-		<github.global.password>${env.gitpassword}</github.global.password>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.build.tycho.version>0.12.0</project.build.tycho.version>
-		<github.maventools.version>0.6</github.maventools.version>
-	</properties>
-
-	<repositories>
-		<repository>
-			<id>indigo</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/indigo</url>
-		</repository>
-		<repository>
-			<id>codehaus</id>
-			<url>http://repository.codehaus.org</url>
-		</repository>
-		<repository>
-			<id>cloudbees-snapshots</id>
-			<url>http://repository-funthomas424242.forge.cloudbees.com/snapshot/</url>
-		</repository>
-		<repository>
-			<id>cloudbees-releases</id>
-			<url>http://repository-funthomas424242.forge.cloudbees.com/release/</url>
-		</repository>
-	</repositories>
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>cukes</id>
-			<url>http://cukes.info/maven</url>
-		</pluginRepository>
-		<pluginRepository>
-			<id>mvnrepo</id>
-			<url>http://mvnrepository.com/artifact/</url>
-		</pluginRepository>
-	</pluginRepositories>
-
-
-
-
-	<ciManagement>
-		<system>Jenkins</system>
-		<url>https://funthomas424242.ci.cloudbees.com/job/github%20maven%20example/</url>
-	</ciManagement>
-
-
 	<issueManagement>
 		<url>https://github.com/funthomas424242/github-maven-example/issues</url>
 		<system>GitHub Issues</system>
 	</issueManagement>
-
-	<distributionManagement>
-		<downloadUrl>https://github.com/FunThomas424242/github-maven-example/downloads</downloadUrl>
-		<snapshotRepository>
-			<id>cloudbees-snapshots</id>
-			<name>Snapshot Repository at CloudBees</name>
-			<uniqueVersion>false</uniqueVersion>
-			<url>https://repository-funthomas424242.forge.cloudbees.com/snapshot/</url>
-		</snapshotRepository>
-		<repository>
-			<id>cloudbees-releases</id>
-			<name>Release Repository at CloudBees</name>
-			<uniqueVersion>false</uniqueVersion>
-			<url>https://repository-funthomas424242.forge.cloudbees.com/release/</url>
-		</repository>
-		<site>
-			<id>github</id>
-			<name>GitHub GH Pages</name>
-			<url>http://github.com/FunThomas424242/github-maven-example/</url>
-		</site>
-	</distributionManagement>
-
-	<scm>
-		<url>https://github.com/FunThomas424242/github-maven-example</url>
-		<connection>scm:git:git://github.com/funthomas424242/github-maven-example.git</connection>
-		<developerConnection>scm:git:git@github.com:funthomas424242/github-maven-example.git</developerConnection>
-	</scm>
-
 
 	<licenses>
 		<license>
@@ -107,6 +24,11 @@
 		</license>
 	</licenses>
 
+	<scm>
+		<url>https://github.com/FunThomas424242/github-maven-example</url>
+		<connection>scm:git:git://github.com/funthomas424242/github-maven-example.git</connection>
+		<developerConnection>scm:git:git@github.com:funthomas424242/github-maven-example.git</developerConnection>
+	</scm>
 
 	<developers>
 		<developer>
@@ -117,54 +39,59 @@
 		</developer>
 	</developers>
 
-	<dependencyManagement>
-		<dependencies>
-			<!-- dependencies of projects are in the projects self defined -->
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>4.8.1</version>
-			</dependency>
-			<!-- dependencies of build plugins follows -->
-			<dependency>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-maven-plugin</artifactId>
-				<version>${project.build.tycho.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.7</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.5</version>
-			</dependency>
-			<dependency>
-				<groupId>com.github.github</groupId>
-				<artifactId>downloads-maven-plugin</artifactId>
-				<version>${github.maventools.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>info.cukes</groupId>
-				<artifactId>cucumber-core</artifactId>
-				<version>1.0.11</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+	<properties>
+		<testonly>false</testonly>
+		<user.jdk-version>1.6</user.jdk-version>
+		<github.global.userName>${env.gituser}</github.global.userName>
+		<github.global.password>${env.gitpassword}</github.global.password>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.tycho.version>0.12.0</project.build.tycho.version>
+		<github.maventools.version>0.7</github.maventools.version>
+	</properties>
 
+	<prerequisites>
+		<maven>3.0</maven>
+	</prerequisites>
 
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<groupId>com.github.github</groupId>
+				<artifactId>downloads-maven-plugin</artifactId>
+				<version>0.6</version>
 				<configuration>
-					<source>${user.jdk-version}</source>
-					<target>${user.jdk-version}</target>
+					<description>Official ${project.name} build of the ${project.version} release</description>
+					<override>true</override>
+					<includeAttached>true</includeAttached>
+					<server>github</server>
 				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>upload</goal>
+						</goals>
+						<phase>install</phase>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>${github.maventools.version}</version>
+				<configuration>
+					<message>Building site for ${project.version}</message>
+					<dryRun>${testonly}</dryRun>
+					<noJekyll>true</noJekyll>
+					<merge>true</merge>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>site</phase>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -182,9 +109,8 @@
 							</artifactId>
 							<version>2.5</version>
 							<configuration>
-								<!--webAccessUrl>https://github.com/FunThomas424242/github-maven-example</webAccessUrl>
-								<anonymousConnection>scm:git:git://github.com/funthomas424242/github-maven-example.git</anonymousConnection>
-								<developerConnection>scm:git:git@github.com:funthomas424242/github-maven-example.git</developerConnection-->
+								<dependencyDetailsEnabled>true</dependencyDetailsEnabled>
+								<dependencyLocationsEnabled>true</dependencyLocationsEnabled>
 								<webAccessUrl>${project.scm.url}</webAccessUrl>
 								<anonymousConnection>${project.scm.connection}</anonymousConnection>
 								<developerConnection>${project.scm.developerConnection}</developerConnection>
@@ -212,32 +138,23 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>com.github.github</groupId>
-				<artifactId>site-maven-plugin</artifactId>
-				<version>${github.maventools.version}</version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
 				<configuration>
-					<message>Building site for ${project.version}</message>
-					<dryRun>${testonly}</dryRun>
-					<noJekyll>true</noJekyll>
-					<merge>true</merge>
+					<source>${user.jdk-version}</source>
+					<target>${user.jdk-version}</target>
 				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>site</goal>
-						</goals>
-						<phase>site</phase>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
 
-	<modules>
-		<module>module</module>
-		<module>feature</module>
-		<module>updatesite</module>
-	</modules>
-
-
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 </project>

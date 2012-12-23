@@ -11,22 +11,16 @@ for how the downloads plugin and site plugin are configured.
 * Fork this project
 * Update the `pom.xml` file `<url>` element to be the address of your fork
 * Optionally update `<scm>` and `<developers>` section as well to have the information for your fork
-* Add the following to your Maven `settings.xml` file (update with your GitHub login name and password):
+* Add the following to your Maven `settings.xml` file updated with your GitHub login name and password:
 
 ```xml
-<profiles>
-  <profile>
+<servers>
+  <server>
     <id>github</id>
-    <properties>
-      <github.global.userName>user</github.global.userName>
-      <github.global.password>password</github.global.password>
-    </properties>
-  </profile>  
-</profiles>
-
-<activeProfiles>
-  <activeProfile>github</activeProfile>
-</activeProfiles>
+    <username>user</username>
+    <password>password</password>
+  </server>  
+</servers>
 ```
 
 # Using the downloads plugin
