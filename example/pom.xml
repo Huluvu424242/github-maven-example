@@ -10,7 +10,7 @@
 	<name>GitHub Maven Plugin Example</name>
 	<description>Multi Module Project (Eclipse Plugin, Feature + Update Site) to demonstrate GitHub Maven plugins</description>
 	<url>http://funthomas424242.github.com/github-maven-example</url>
-
+ 
 	<issueManagement>
 		<url>https://github.com/funthomas424242/github-maven-example/issues</url>
 		<system>GitHub Issues</system>
