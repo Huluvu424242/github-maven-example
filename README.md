@@ -6,6 +6,8 @@ This forked version supported an multimodule maven build for eclipse plugins wit
 See the [POM file](https://github.com/funthomas424242/github-maven-example/blob/master/example/pom.xml)
 for how the downloads plugin and site plugin are configured.
 
+[![Build Status](https://travis-ci.org/FunThomas424242/github-maven-example.png?branch=master)](https://travis-ci.org/FunThomas424242/github-maven-example)
+
 # Getting started
 
 * Fork this project
