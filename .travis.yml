@@ -1,0 +1,17 @@
+#before_script:
+#  - wget -N http://buildboost.org/build.xml
+  
+jdk:
+  - openjdk6
+#  - openjdk7
+#  - oraclejdk6
+#  - oraclejdk7
+  
+env:
+  global:
+    - secure: "HRZicgmnpomo3yJVdiHX8xFwXhofMGPD46SdvmjgYLO4y1HZRXsOu10uz1TN\ncDc4gEgLpCWIcODnyf1oZd0clzvq9BJbnpF4uOJuTzUipBAeoFPwY83bwYNC\nm0ALVDaPdiUZ0JuPuagxwxImv+FFArJbfF7Ai4j9QDSTzitBrDA="
+    - secure: "VzDcOwiCHG7Rb8RtiV2E7Az2izvNx2ek9qN0PZHfNnGPrPILzb/Bdo29UOAu\nrMfIY2tN6AxLVdGNhj+xdbCfggBiYuEelZhSzoBq7y/3oBkE7lopaCHXiC5O\nsNtMlfYVtO5BoIxiaSpDqhQnmiv7WYFuQ4JfkRlj+swo9pfg/3w="
+  
+  
+language: java
+# script: "ant -Djava.util.logging.config.file='logging.properties' -DrootRepository='git:https://github.com/FunThomas424242/gedcoml.git'"

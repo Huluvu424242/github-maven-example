@@ -42,8 +42,8 @@
 	<properties>
 		<testonly>false</testonly>
 		<user.jdk-version>1.6</user.jdk-version>
-		<github.global.userName>${env.gituser}</github.global.userName>
-		<github.global.password>${env.gitpassword}</github.global.password>
+		<github.global.userName>${env.MY_USER}</github.global.userName>
+		<github.global.password>${env.MY_PASS}</github.global.password>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.tycho.version>0.12.0</project.build.tycho.version>
 		<github.maventools.version>0.7</github.maventools.version>
